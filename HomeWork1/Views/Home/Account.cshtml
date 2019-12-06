@@ -13,30 +13,19 @@
             </tr>
             @if (Model != null && Model.Any())
             {
+                int i = 0;
                 foreach (var item in Model)
                 {
+                    i++;
                     <tr>
-                        <td>@item.Idx</td>
+                        <td>@i</td>
                         <td>@item.Category</td>
                         <td>@item.LogDate.ToString("yyyy-MM-dd")</td>
                         <td>@item.Money.ToString("#,0")</td>
-                    </tr>
+                    </tr>                   
                 }
 
             }
-
-            @*<tr>
-                    <td>2</td>
-                    <td>支出</td>
-                    <td>2016-01-02</td>
-                    <td>1,600</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>支出</td>
-                    <td>2016-01-03</td>
-                    <td>8,00</td>
-                </tr>*@
         </table>
     </div>
 </div>
