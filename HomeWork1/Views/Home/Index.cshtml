@@ -1,6 +1,4 @@
-﻿@*@{
-        ViewBag.Title = "Home Page";
-    }*@
+﻿@model  IEnumerable<HomeWork1.Models.ViewModels.AccountCategoryViewModel>
 <div class="well">
     <form class="form-horizontal">
         <div class="form-group">
@@ -8,8 +6,13 @@
             <div class="col-sm-10">
                 <select id="category" class="form-control">
                     <option value="" selected>請選擇</option>
-                    <option>支出</option>
-                    <option>收入</option>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <option value="@item.Key">@item.Value</option>
+                        }
+                    }
                 </select>
             </div>
         </div>

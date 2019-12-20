@@ -12,8 +12,7 @@ namespace HomeWork1.Controllers
     {
         public ActionResult Index()
         {
-
-            return View();
+            return View(new AccountService().GetAccountCategory());
         }
 
         public ActionResult About()
